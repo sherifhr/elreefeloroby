@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elreef Eloroby-Stores List By Activity Type</title>
+  
+  <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/thabit.css">
+  <link rel="stylesheet" href="http://www.fontstatic.com/f=jazeera,jazeera-light">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/amiri.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+  <style>
+    @import url("http://www.fontstatic.com/f=jazeera,jazeera-light");
+    
+    .image-container{
+    width:100%;
+    height:80;
+  }
+
+  .card img{
+    width:30%;
+    height:30%;
+    } 
+#image{
+  width:30%;
+  height:30%;
+}
+  </style> 
+
+</head>
+<body>
+  {% extends "home.html" %}
+  {% block content%}
+  <div class="container-A">
+		<h1><img src="/static/images/Logo1.png" style="width:5%; height:5%;">
+			مجتمع الريف اﻷوربي <img src="/static/images/Logo1.png" style="width:5%; height:5%;"></h1>
+		<a id="btn1" class="btn btn-success btn-sm" href="{{url_for('index')}}" role="button">Home</a>
+		<a id="btn1" type="button" class="btn btn-warning btn-sm" href="{{url_for('cart_items_list1', buyer=current_user.name)}}" role="button">
+			Cart Items</a>
+		<button id="btn1" type="button" class="btn btn-secondary btn-sm"><i class="fa fa-fw fa-user"></i> {{current_user.name}}</button>
+	</div>
+  <div class="container">
+      <a href="{{url_for('dashboard')}}" class="DB-button">Dash Board</a>
+      <a href="{{url_for('index')}}" class="home-button"> Home page </a>
+      <br>
+      <h4 class="text-center">Commercial Stores Listed By Activity</h4>
+      <div class="row">
+      {% if store %}
+        {% for s in store %}
+        <div class="col-md-5">
+          <div class="card">
+          <h3>{{ s.activity }}</h3>
+          <div class="image-container">
+            <img src="static/images/{{s.filename}}" alt="{{s.filename}}">
+          </div>
+          <div class="card-body">
+              <h4 class="card-title">{{ s.store_name }}</h4>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{s.phone1}} 
+                  <i class="fa fa-phone-square" style="font-size:24px; color:blue"></i></li>
+                <li class="list-group-item">{{s.phone2}} <i class="fa fa-phone-square" style="font-size:24px;color:red"></i></li>
+              </ul>
+              <a href="{{url_for('show_store_details', store_id=s.id)}}" class="btn btn-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <p>No data found.</p>
+      {% endif %}
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
