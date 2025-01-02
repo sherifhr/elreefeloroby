@@ -1,0 +1,120 @@
+    body {
+            font-family: Arial, sans-serif;
+            /* background-color: #f4f4f4; */
+            display: flex;
+            background-color: grey;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            width: 100%; 
+            border-color: #5cb85c;
+        }
+        h4 {
+            color: white;
+            background-color: darkblue;
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            text-align: center;
+            width:100%;
+             }
+        
+        button {
+            width: 30%;
+            margin-right: 33%;
+            height: 1cm;
+            padding: 1px;
+            background-color:darkgreen;
+            border: none;
+            border-radius: 13px;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            cursor: pointer;
+            text-align:center;
+        }
+        button:hover {
+            background-color: red;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+         }
+        #myName{
+          width:100%;
+          border-radius: 10px;
+          margin-bottom: 1mm;
+          color:blue;
+          font-weight: 700;
+          font-family: Thabit;
+
+        }
+        #phone{
+          width:100%;
+          color:blue;
+          font-weight: 700;
+          border-radius: 10px;
+          margin-bottom: 1mm;
+          font-family: Thabit;
+        } 
+        #email{
+          width:100%;
+          border-radius: 10px;
+          margin-bottom: 1mm;
+          font-family: Thabit;
+          font-weight: 700;
+        }
+        #myPassword{
+          width:100%;
+          border-radius: 10px;
+          font-family: Thabit;
+          font-weight: 700;
+        }
+        #selectInput{
+          width:100%;
+          color: white;
+          background-color: black;
+          border-radius: 15px;
+          font-weight: 700;
+          padding: 1px;
+          font-family: Thabit;
+          margin-bottom: 5mm;
+        }
+
+        #selectInput:hover{
+          color: white;
+          background-color: darkgreen;
+        }
+
+        #submitButton{
+          background-color: green;
+          color:white;
+          font-family: 'Times New Roman', Times, serif;
+          font-weight: 700;
+          font-size: 20px;
+          border-radius: 13px;
+          height: .9cm;
+          padding: 1px;
+          margin-right: 37%;
+        }
+        #submitButton:hover{
+          color:black;
+          background-color: red;
+        }
+         p{
+          color:black;
+          font-family: 'Times New Roman', Times, serif;
+          text-align: left;
+          font-size: 22px;
+          font-weight: 900;
+         }
+
+   .fa{
+    color:darkblue;
+    background-color: yellow;
+   }
