@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload Preview</title>
+</head>
+<body>
+
+    <h1>Update Profile Picture</h1>
+    
+    <!-- Current image displayed from the database -->
+    <img src="static/images/clinic.jpeg" alt="sherif">
+<!-- 
+    <img id="currentImage" src="static/New_images/clinic.jpeg" alt="Current Image" style="max-width: 300px; height: auto;"> -->
+
+    <div>
+        <input type="file" id="imageUpload" accept="image/*" onchange="preview_2(this)">
+    </div>
+
+    <!-- Preview the new image -->
+    <img id="previewImage" src="" alt="Preview Image" style="max-width: 300px; height: auto; display: none;">
+
+    <script>
+        function preview_2(obj) {
+            if (FileReader) {
+                var reader = new FileReader();
+                reader.readAsDataURL(obj.files[0]);
+
+                reader.onload = function (e) {
+                    var image = new Image();
+                    image.src = e.target.result;
+
+                    image.onload = function () {
+                        // Display the preview image
+                        var previewImg = document.getElementById('previewImage');
+                        previewImg.src = image.src;
+                        previewImg.style.display = 'block'; // Show the preview
+                    };
+                };
+            }
+        }
+    </script>
+
+</body>
+</html>
